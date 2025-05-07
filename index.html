@@ -220,7 +220,7 @@
                     <input type="text" name="user_name" placeholder="Your Name" class="form-input" required>
                     <input type="email" name="user_email" placeholder="Your email" class="form-input" required>
                     <textarea  name="user_message"  placeholder="Your message" class="form-input" required></textarea>
-                    <button class="submit-button">login </button>
+                    <button class="submit-button">join</button>
                 </form>
             </div>
         </section>
@@ -249,7 +249,7 @@
    
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
-  emailjs.init('ywhykTNitk_lyhqn6'); // <-- твой Public Key
+  emailjs.init('ywhykTNitk_lyhqn6'); 
 
   document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -261,7 +261,7 @@
         alert('Ошибка: ' + JSON.stringify(error));
       });
 
-    this.reset(); // очистка формы
+    this.reset(); 
   });
 </script>
    
