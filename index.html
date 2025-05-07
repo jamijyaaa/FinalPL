@@ -216,10 +216,10 @@
             <div class="section-contact">
 
 
-                <form action="#" class="contact-form">
-                    <input type="text" placeholder="Your Name" class="form-input" required>
-                    <input type="email" placeholder="Your email" class="form-input" required>
-                    <textarea placeholder="Your message" class="form-input" required></textarea>
+                <form action="#" class="contact-form" id="contact-form">
+                    <input type="text" name="user_name" placeholder="Your Name" class="form-input" required>
+                    <input type="email" name="user_email" placeholder="Your email" class="form-input" required>
+                    <textarea  name="user_message"  placeholder="Your message" class="form-input" required></textarea>
                     <button class="submit-button">login </button>
                 </form>
             </div>
@@ -246,5 +246,25 @@
 
 
     <script src="script.js"></script>
+   
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  emailjs.init('ywhykTNitk_lyhqn6'); // <-- твой Public Key
+
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_wzc9m1o', 'template_87lt8hd', this)
+      .then(function() {
+        alert('Письмо успешно отправлено!');
+      }, function(error) {
+        alert('Ошибка: ' + JSON.stringify(error));
+      });
+
+    this.reset(); // очистка формы
+  });
+</script>
+   
+
 </body>
 </html>
